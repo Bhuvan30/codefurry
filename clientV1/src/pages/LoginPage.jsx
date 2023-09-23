@@ -24,16 +24,20 @@ function LoginPage() {
 
   if (isLoading === true || backInfo[0] === undefined) return <h1>Loading</h1>;
 
-  const { name, email, password } = backInfo[0];
-
   function handelSubmit(e) {
     console.log("hello");
     e.preventDefault();
     console.log(fName);
-    if (fName === name && fEmail === email && fPassword === password) {
-      console.log("sucesss");
-      login();
-    }
+    backInfo.forEach((info) => {
+      if (
+        fName === info.name &&
+        fEmail === info.email &&
+        fPassword === info.password
+      ) {
+        console.log("Success");
+        login();
+      }
+    });
   }
 
   if (isAuthenticated) return;

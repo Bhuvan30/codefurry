@@ -3,6 +3,7 @@ import PageNav from "../components/PageNav/PageNav";
 import Button from "../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.css";
+
 function SignIn() {
   const navigate = useNavigate();
   // const [name, setname] = useState("");
@@ -34,7 +35,7 @@ function SignIn() {
       });
 
       if (response.ok) {
-        // Handle success
+        navigate("/", { replace: true });
       } else {
         // Handle error
       }
